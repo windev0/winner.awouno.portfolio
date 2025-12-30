@@ -66,9 +66,22 @@ export const insertExperienceSchema = createInsertSchema(experiences);
 export const insertProjectSchema = createInsertSchema(projects);
 export const insertAccomplishmentSchema = createInsertSchema(accomplishments);
 
+// Contact Submissions
+export const contactSubmissions = pgTable("contact_submissions", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  message: text("message").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+// Schemas
+export const insertContactSubmissionSchema = createInsertSchema(contactSubmissions).omit({ id: true, createdAt: true });
+
 // Types
 export type Profile = typeof profile.$inferSelect;
 export type Skill = typeof skills.$inferSelect;
 export type Experience = typeof experiences.$inferSelect;
 export type Project = typeof projects.$inferSelect;
 export type Accomplishment = typeof accomplishments.$inferSelect;
+export type ContactSubmission = typeof contactSubmissions.$inferSelect;

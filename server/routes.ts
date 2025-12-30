@@ -35,25 +35,27 @@ export async function registerRoutes(
     res.json(accomplishments);
   });
 
-  app.post(api.contact.send.path, (req, res) => {
-    const { name, email, message } = req.body;
-    
-    // In production, you would integrate with an email service like SendGrid, Mailgun, etc.
-    // For now, we'll log it and return success
-    console.log("Contact form submission:", { name, email, message, timestamp: new Date().toISOString() });
-    
-    // You can add email sending here using nodemailer or similar
-    // Example with nodemailer:
-    // const transporter = nodemailer.createTransport({...});
-    // await transporter.sendMail({
-    //   from: process.env.EMAIL_FROM,
-    //   to: process.env.EMAIL_TO,
-    //   subject: `New message from ${name}`,
-    //   text: message,
-    //   replyTo: email,
-    // });
-    
-    res.json({ success: true });
+  app.post(api.contact.send.path, async (req, res) => {
+    try {
+      const { name, email, message } = req.body;
+      
+      // Validate input
+      const validated = api.contact.send.input.parse({ name, email, message });
+      
+      // Save to database
+      await storage.createContactSubmission(validated);
+      
+      // Log for debugging
+      console.log("Contact form submission saved:", { name, email, timestamp: new Date().toISOString() });
+      
+      // TODO: In production, integrate with email service (SendGrid, Mailgun, Resend, etc.)
+      // to send email to awounokossiwinner@gmail.com and notify the user
+      
+      res.json({ success: true, message: "Message saved successfully" });
+    } catch (error) {
+      console.error("Contact form error:", error);
+      res.status(400).json({ success: false, message: "Failed to send message" });
+    }
   });
 
   return httpServer;

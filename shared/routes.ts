@@ -57,7 +57,7 @@ export const api = {
         message: z.string(),
       }),
       responses: {
-        200: z.object({ success: z.boolean() }),
+        200: z.object({ success: z.boolean(), message: z.string() }),
       },
     }
   }

@@ -54,7 +54,7 @@ export default function Home() {
   if (!profile) return null;
 
   const SidebarContent = () => (
-    <div className="flex flex-col h-full p-6 md:p-8 lg:p-10 space-y-8">
+    <div className="flex flex-col h-full p-6 md:p-8 lg:p-10 space-y-8 overflow-y-auto">
       {/* Header Actions */}
       <div className="flex justify-between items-center">
         <ThemeToggle />
@@ -114,8 +114,8 @@ export default function Home() {
       <div className="space-y-4 w-full">
         <ContactDialog />
         <a 
-          href="https://raw.githubusercontent.com/windev0/portfolio/main/AWOUNO_WINNER_RESUME_STAGE_1767134502978.pdf"
-          download
+          href="https://drive.google.com/uc?export=download&id=1OoReiQ_7z938BtQOSGhsv4C9YLaAygWf"
+          download="AWOUNO_WINNER_CV.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -189,7 +189,7 @@ export default function Home() {
                   </p>
                 </div>
                 
-                {skills && (
+                {skills && skills.length > 0 && (
                   <div className="space-y-8">
                     {['Frontend', 'Backend', 'Mobile', 'Database', 'Tools'].map((category) => {
                       const categorySkills = skills.filter(s => s.category === category);
