@@ -30,9 +30,29 @@ export async function registerRoutes(
     res.json(projects);
   });
 
+  app.get(api.accomplishments.list.path, async (req, res) => {
+    const accomplishments = await storage.getAccomplishments();
+    res.json(accomplishments);
+  });
+
   app.post(api.contact.send.path, (req, res) => {
-    // Mock email sending
-    console.log("Contact form submission:", req.body);
+    const { name, email, message } = req.body;
+    
+    // In production, you would integrate with an email service like SendGrid, Mailgun, etc.
+    // For now, we'll log it and return success
+    console.log("Contact form submission:", { name, email, message, timestamp: new Date().toISOString() });
+    
+    // You can add email sending here using nodemailer or similar
+    // Example with nodemailer:
+    // const transporter = nodemailer.createTransport({...});
+    // await transporter.sendMail({
+    //   from: process.env.EMAIL_FROM,
+    //   to: process.env.EMAIL_TO,
+    //   subject: `New message from ${name}`,
+    //   text: message,
+    //   replyTo: email,
+    // });
+    
     res.json({ success: true });
   });
 

@@ -8,10 +8,11 @@ import {
   Layers, 
   Cpu, 
   Menu,
-  X
+  X,
+  Award
 } from "lucide-react";
 
-import { useProfile, useSkills, useExperiences, useProjects } from "@/hooks/use-portfolio";
+import { useProfile, useSkills, useExperiences, useProjects, useAccomplishments } from "@/hooks/use-portfolio";
 import { useLanguage } from "@/hooks/use-language";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
@@ -19,6 +20,7 @@ import { ContactDialog } from "@/components/ContactDialog";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { SkillCard } from "@/components/SkillCard";
 import { ProjectCard } from "@/components/ProjectCard";
+import { AccomplishmentCard } from "@/components/AccomplishmentCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -34,8 +36,9 @@ export default function Home() {
   const { data: skills, isLoading: skillsLoading } = useSkills();
   const { data: experiences, isLoading: experiencesLoading } = useExperiences();
   const { data: projects, isLoading: projectsLoading } = useProjects();
+  const { data: accomplishments, isLoading: accomplishmentsLoading } = useAccomplishments();
 
-  const isLoading = profileLoading || skillsLoading || experiencesLoading || projectsLoading;
+  const isLoading = profileLoading || skillsLoading || experiencesLoading || projectsLoading || accomplishmentsLoading;
 
   if (isLoading) {
     return (
@@ -108,32 +111,43 @@ export default function Home() {
       </div>
 
       {/* Footer Actions */}
-      <div className="space-y-4 w-full max-w-sm mx-auto">
+      <div className="space-y-4 w-full">
         <ContactDialog />
-        <Button variant="outline" className="w-full border-primary/20 hover:border-primary/50 hover:bg-primary/5">
-          <Download className="w-4 h-4 mr-2" />
-          {language === 'en' ? 'Download CV' : 'Télécharger CV'}
-        </Button>
+        <a 
+          href="https://raw.githubusercontent.com/windev0/portfolio/main/AWOUNO_WINNER_RESUME_STAGE_1767134502978.pdf"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button variant="outline" className="w-full border-primary/20 hover:border-primary/50 hover:bg-primary/5">
+            <Download className="w-4 h-4 mr-2" />
+            {language === 'en' ? 'Download CV' : 'Télécharger CV'}
+          </Button>
+        </a>
       </div>
     </div>
   );
 
   const MainContent = () => (
     <div className="p-6 md:p-12 lg:p-16 max-w-5xl mx-auto">
-      <Tabs defaultValue="experience" className="w-full" onValueChange={setActiveTab}>
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <div className="sticky top-0 z-20 bg-background/80 backdrop-blur-lg pb-6 pt-2">
-          <TabsList className="w-full grid grid-cols-3 h-14 p-1 bg-secondary/50 rounded-xl">
-            <TabsTrigger value="experience" className="rounded-lg text-sm md:text-base font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all">
-              <Layers className="w-4 h-4 mr-2 hidden md:inline" />
+          <TabsList className="w-full grid grid-cols-4 h-14 p-1 bg-secondary/50 rounded-xl">
+            <TabsTrigger value="experience" className="rounded-lg text-xs sm:text-sm md:text-base font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all">
+              <Layers className="w-4 h-4 mr-1 md:mr-2 hidden sm:inline" />
               {language === 'en' ? 'Experience' : 'Expérience'}
             </TabsTrigger>
-            <TabsTrigger value="skills" className="rounded-lg text-sm md:text-base font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all">
-              <Cpu className="w-4 h-4 mr-2 hidden md:inline" />
+            <TabsTrigger value="skills" className="rounded-lg text-xs sm:text-sm md:text-base font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all">
+              <Cpu className="w-4 h-4 mr-1 md:mr-2 hidden sm:inline" />
               {language === 'en' ? 'Skills' : 'Compétences'}
             </TabsTrigger>
-            <TabsTrigger value="projects" className="rounded-lg text-sm md:text-base font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all">
-              <Code2 className="w-4 h-4 mr-2 hidden md:inline" />
+            <TabsTrigger value="projects" className="rounded-lg text-xs sm:text-sm md:text-base font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all">
+              <Code2 className="w-4 h-4 mr-1 md:mr-2 hidden sm:inline" />
               {language === 'en' ? 'Projects' : 'Projets'}
+            </TabsTrigger>
+            <TabsTrigger value="accomplishments" className="rounded-lg text-xs sm:text-sm md:text-base font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all">
+              <Award className="w-4 h-4 mr-1 md:mr-2 hidden sm:inline" />
+              {language === 'en' ? 'Awards' : 'Récompenses'}
             </TabsTrigger>
           </TabsList>
         </div>
@@ -176,12 +190,23 @@ export default function Home() {
                 </div>
                 
                 {skills && (
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                    {skills.map((skill, idx) => (
-                      <div key={skill.id} className="aspect-square">
-                        <SkillCard skill={skill} index={idx} />
-                      </div>
-                    ))}
+                  <div className="space-y-8">
+                    {['Frontend', 'Backend', 'Mobile', 'Database', 'Tools'].map((category) => {
+                      const categorySkills = skills.filter(s => s.category === category);
+                      if (categorySkills.length === 0) return null;
+                      return (
+                        <div key={category}>
+                          <h3 className="text-lg font-semibold mb-4 text-primary">{category}</h3>
+                          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                            {categorySkills.map((skill, idx) => (
+                              <div key={skill.id} className="aspect-square">
+                                <SkillCard skill={skill} index={idx} />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
               </motion.div>
@@ -207,6 +232,32 @@ export default function Home() {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
                     {projects.map((project, idx) => (
                       <ProjectCard key={project.id} project={project} index={idx} />
+                    ))}
+                  </div>
+                )}
+              </motion.div>
+            </TabsContent>
+
+            <TabsContent value="accomplishments" className="mt-0 outline-none">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="mb-8">
+                  <h2 className="text-3xl font-bold mb-2">
+                    {language === 'en' ? 'Accomplishments' : 'Accomplissements'}
+                  </h2>
+                  <p className="text-muted-foreground">
+                    {language === 'en' ? 'Certifications, workshops, and training.' : 'Certifications, ateliers et formations.'}
+                  </p>
+                </div>
+                
+                {accomplishments && accomplishments.length > 0 && (
+                  <div className="space-y-4">
+                    {accomplishments.map((accomplishment, idx) => (
+                      <AccomplishmentCard key={accomplishment.id} accomplishment={accomplishment} index={idx} language={language} />
                     ))}
                   </div>
                 )}

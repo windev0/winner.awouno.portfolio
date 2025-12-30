@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { api, buildUrl } from "@shared/routes";
-import { type InsertProfile, type InsertSkill, type InsertExperience, type InsertProject } from "@shared/schema";
+import { type InsertProfile, type InsertSkill, type InsertExperience, type InsertProject, type InsertAccomplishment } from "@shared/schema";
 
 // Profile Hooks
 export function useProfile() {
@@ -46,6 +46,18 @@ export function useProjects() {
       const res = await fetch(api.projects.list.path);
       if (!res.ok) throw new Error("Failed to fetch projects");
       return api.projects.list.responses[200].parse(await res.json());
+    },
+  });
+}
+
+// Accomplishments Hooks
+export function useAccomplishments() {
+  return useQuery({
+    queryKey: [api.accomplishments.list.path],
+    queryFn: async () => {
+      const res = await fetch(api.accomplishments.list.path);
+      if (!res.ok) throw new Error("Failed to fetch accomplishments");
+      return api.accomplishments.list.responses[200].parse(await res.json());
     },
   });
 }

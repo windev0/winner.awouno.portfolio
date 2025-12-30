@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertProfileSchema, insertSkillSchema, insertExperienceSchema, insertProjectSchema } from './schema';
+import { insertProfileSchema, insertSkillSchema, insertExperienceSchema, insertProjectSchema, insertAccomplishmentSchema } from './schema';
 
 export const api = {
   profile: {
@@ -7,7 +7,7 @@ export const api = {
       method: 'GET' as const,
       path: '/api/profile',
       responses: {
-        200: insertProfileSchema, // Returns the single profile object
+        200: insertProfileSchema,
       },
     },
   },
@@ -35,6 +35,15 @@ export const api = {
       path: '/api/projects',
       responses: {
         200: z.array(insertProjectSchema.extend({ id: z.number() })),
+      },
+    },
+  },
+  accomplishments: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/accomplishments',
+      responses: {
+        200: z.array(insertAccomplishmentSchema.extend({ id: z.number() })),
       },
     },
   },
