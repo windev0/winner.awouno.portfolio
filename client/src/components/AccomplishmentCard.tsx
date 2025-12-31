@@ -24,7 +24,7 @@ const typeColors = {
 };
 
 export function AccomplishmentCard({ accomplishment, index, language }: AccomplishmentCardProps) {
-  const Icon = typeIcons[accomplishment.type as keyof typeof typeIcons] || Award;
+  const Icon = typeIcons[accomplishment?.type as keyof typeof typeIcons] || Award;
   const colorClass = typeColors[accomplishment.type as keyof typeof typeColors];
 
   const title = language === 'en' ? accomplishment.titleEn : accomplishment.titleFr;

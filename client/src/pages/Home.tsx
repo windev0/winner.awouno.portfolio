@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Github,
@@ -20,18 +20,16 @@ import {
   useAccomplishments,
 } from "@/hooks/use-portfolio";
 import { useLanguage } from "@/hooks/use-language";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { LanguageToggle } from "@/components/LanguageToggle";
-import { ContactDialog } from "@/components/ContactDialog";
+
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { SkillCard } from "@/components/SkillCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { AccomplishmentCard } from "@/components/AccomplishmentCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Skeleton } from "@/components/ui/skeleton";
+
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import SidebarContent from "@/components/SidebarContent";
 
 export default function Home() {
   const { language } = useLanguage();
@@ -66,84 +64,6 @@ export default function Home() {
   }
 
   if (!profile) return null;
-
-  const SidebarContent = () => (
-    <div className="flex flex-col h-full p-6 md:p-8 lg:p-10 space-y-8 overflow-y-auto">
-      {/* Header Actions */}
-      <div className="flex justify-between items-center">
-        <ThemeToggle />
-        <LanguageToggle />
-      </div>
-
-      {/* Profile Info */}
-      <div className="flex-1 flex flex-col items-center text-center space-y-6 mt-8">
-        <div className="relative group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-full opacity-75 blur transition duration-500 group-hover:opacity-100" />
-          <img
-            src={profile.avatarUrl || "https://github.com/windev0.png"}
-            alt={profile.name}
-            className="relative w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-background object-cover shadow-2xl"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">
-            {profile.name}
-          </h1>
-          <p className="text-xl text-muted-foreground font-medium">
-            {profile.title}
-          </p>
-        </div>
-
-        <p className="text-muted-foreground leading-relaxed max-w-sm">
-          {language === "en" ? profile.bioEn : profile.bioFr}
-        </p>
-
-        {/* Social Links */}
-        <div className="flex gap-4">
-          {profile.githubUrl && (
-            <a
-              href={profile.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-          )}
-          {profile.linkedinUrl && (
-            <a
-              href={profile.linkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-          )}
-        </div>
-      </div>
-
-      {/* Footer Actions */}
-      <div className="space-y-4 w-full">
-        <ContactDialog />
-        <a
-          href="https://drive.google.com/uc?export=download&id=1OoReiQ_7z938BtQOSGhsv4C9YLaAygWf"
-          download="AWOUNO_WINNER_CV.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button
-            variant="outline"
-            className="w-full border-primary/20 hover:border-primary/50 hover:bg-primary/5"
-          >
-            <Download className="w-4 h-4 mr-2" />
-            {language === "en" ? "Download CV" : "Télécharger CV"}
-          </Button>
-        </a>
-      </div>
-    </div>
-  );
 
   const MainContent = () => (
     <div className="p-6 md:p-12 lg:p-16 max-w-5xl mx-auto">
@@ -311,18 +231,22 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* {accomplishments && accomplishments.length > 0 && (
+                {accomplishments && accomplishments.length > 0 && (
                   <div className="space-y-4">
                     {accomplishments.map((accomplishment, idx) => (
                       <AccomplishmentCard
                         key={accomplishment.id}
-                        accomplishment={accomplishment}
+                        accomplishment={{
+                          ...accomplishment,
+                          organization: accomplishment.organization ?? "",
+                          link: accomplishment.link ?? "",
+                        }}
                         index={idx}
                         language={language}
                       />
                     ))}
                   </div>
-                )} */}
+                )}
               </motion.div>
             </TabsContent>
           </AnimatePresence>
@@ -345,14 +269,14 @@ export default function Home() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-[85%] sm:w-[350px] p-0">
-            <SidebarContent />
+            <SidebarContent profile={profile} language={language} />
           </SheetContent>
         </Sheet>
       </div>
 
       {/* Desktop Fixed Sidebar (Left) */}
       <aside className="hidden md:block w-[350px] lg:w-[400px] h-full border-r border-border bg-card/30 backdrop-blur-sm overflow-hidden relative">
-        <SidebarContent />
+        <SidebarContent profile={profile} language={language} />
       </aside>
 
       {/* Scrollable Main Content (Right) */}
