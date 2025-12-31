@@ -1,16 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Github,
-  Linkedin,
-  Download,
-  Code2,
-  Layers,
-  Cpu,
-  Menu,
-  X,
-  Award,
-} from "lucide-react";
+import { Code2, Layers, Cpu, Menu, Award } from "lucide-react";
 
 import {
   useProfile,
@@ -24,12 +14,12 @@ import { useLanguage } from "@/hooks/use-language";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { SkillCard } from "@/components/SkillCard";
 import { ProjectCard } from "@/components/ProjectCard";
-import { AccomplishmentCard } from "@/components/AccomplishmentCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import SidebarContent from "@/components/SidebarContent";
+import AccomplishmentTab from "@/components/tabs/Accomplishments";
 
 export default function Home() {
   const { language } = useLanguage();
@@ -213,42 +203,7 @@ export default function Home() {
               </motion.div>
             </TabsContent>
 
-            <TabsContent value="accomplishments" className="mt-0 outline-none">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="mb-8">
-                  <h2 className="text-3xl font-bold mb-2">
-                    {language === "en" ? "Accomplishments" : "Accomplissements"}
-                  </h2>
-                  <p className="text-muted-foreground">
-                    {language === "en"
-                      ? "Certifications, workshops, and training."
-                      : "Certifications, ateliers et formations."}
-                  </p>
-                </div>
-
-                {accomplishments && accomplishments.length > 0 && (
-                  <div className="space-y-4">
-                    {accomplishments.map((accomplishment, idx) => (
-                      <AccomplishmentCard
-                        key={accomplishment.id}
-                        accomplishment={{
-                          ...accomplishment,
-                          organization: accomplishment.organization ?? "",
-                          link: accomplishment.link ?? "",
-                        }}
-                        index={idx}
-                        language={language}
-                      />
-                    ))}
-                  </div>
-                )}
-              </motion.div>
-            </TabsContent>
+            <AccomplishmentTab language={language} accomplishments={accomplishments || []} />
           </AnimatePresence>
         </div>
       </Tabs>
