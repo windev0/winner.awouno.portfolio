@@ -20,6 +20,10 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import SidebarContent from "@/components/SidebarContent";
 import AccomplishmentTab from "@/components/tabs/Accomplishments";
+import ProjectTab from "@/components/tabs/Project";
+import SkillsTab from "@/components/tabs/Skills";
+import ExperienceTab from "@/components/tabs/Experience";
+import CustomTabTrigger from "@/components/tabs/Trigger";
 
 export default function Home() {
   const { language } = useLanguage();
@@ -55,155 +59,43 @@ export default function Home() {
 
   if (!profile) return null;
 
+  const tabsLabels = {
+    experience: language === "en" ? "Experience" : "Expérience",
+    skills: language === "en" ? "Skills" : "Compétences",
+    projects: language === "en" ? "Projects" : "Projets",
+    accomplishments: language === "en" ? "Awards" : "Récompenses",
+  };
+  
   const MainContent = () => (
     <div className="p-6 md:p-12 lg:p-16 max-w-5xl mx-auto">
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <div className="sticky top-0 z-20 bg-background/80 backdrop-blur-lg pb-6 pt-2">
           <TabsList className="w-full grid grid-cols-4 h-14 p-1 bg-secondary/50 rounded-xl">
-            <TabsTrigger
-              value="experience"
-              className="rounded-lg text-xs sm:text-sm md:text-base font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all"
-            >
-              <Layers className="w-4 h-4 mr-1 md:mr-2 hidden sm:inline" />
-              {language === "en" ? "Experience" : "Expérience"}
-            </TabsTrigger>
-            <TabsTrigger
-              value="skills"
-              className="rounded-lg text-xs sm:text-sm md:text-base font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all"
-            >
-              <Cpu className="w-4 h-4 mr-1 md:mr-2 hidden sm:inline" />
-              {language === "en" ? "Skills" : "Compétences"}
-            </TabsTrigger>
-            <TabsTrigger
-              value="projects"
-              className="rounded-lg text-xs sm:text-sm md:text-base font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all"
-            >
-              <Code2 className="w-4 h-4 mr-1 md:mr-2 hidden sm:inline" />
-              {language === "en" ? "Projects" : "Projets"}
-            </TabsTrigger>
-            <TabsTrigger
-              value="accomplishments"
-              className="rounded-lg text-xs sm:text-sm md:text-base font-medium data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all"
-            >
-              <Award className="w-4 h-4 mr-1 md:mr-2 hidden sm:inline" />
-              {language === "en" ? "Awards" : "Récompenses"}
-            </TabsTrigger>
+            {Object.entries(tabsLabels).map(([key, label]) => (
+              <CustomTabTrigger value={key} key={key} label={label} />
+            ))}
           </TabsList>
         </div>
 
         <div className="mt-8 min-h-[60vh]">
           <AnimatePresence mode="wait">
-            <TabsContent value="experience" className="mt-0 outline-none">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="mb-8">
-                  <h2 className="text-3xl font-bold mb-2">
-                    {language === "en"
-                      ? "Work History"
-                      : "Parcours Professionnel"}
-                  </h2>
-                  <p className="text-muted-foreground">
-                    {language === "en"
-                      ? "My professional journey and career highlights."
-                      : "Mon parcours professionnel et mes réalisations."}
-                  </p>
-                </div>
-                {experiences && (
-                  <ExperienceTimeline experiences={experiences} />
-                )}
-              </motion.div>
-            </TabsContent>
+            {/* Experience tab */}
+            <ExperienceTab
+              language={language}
+              experiences={experiences || []}
+            />
 
-            <TabsContent value="skills" className="mt-0 outline-none">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="mb-8">
-                  <h2 className="text-3xl font-bold mb-2">
-                    {language === "en"
-                      ? "Technical Arsenal"
-                      : "Arsenal Technique"}
-                  </h2>
-                  <p className="text-muted-foreground">
-                    {language === "en"
-                      ? "Technologies and tools I work with."
-                      : "Les technologies et outils avec lesquels je travaille."}
-                  </p>
-                </div>
+            {/* Skills tab */}
+            <SkillsTab language={language} skills={skills || []} />
 
-                {skills && skills.length > 0 && (
-                  <div className="space-y-8">
-                    {["Frontend", "Backend", "Mobile", "Database", "Tools"].map(
-                      (category) => {
-                        const categorySkills = skills.filter(
-                          (s) => s.category === category
-                        );
-                        if (categorySkills.length === 0) return null;
-                        return (
-                          <div key={category}>
-                            <h3 className="text-lg font-semibold mb-4 text-primary">
-                              {category}
-                            </h3>
-                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                              {categorySkills.map((skill, idx) => (
-                                <div key={skill.id} className="aspect-square">
-                                  <SkillCard skill={skill} index={idx} />
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      }
-                    )}
-                  </div>
-                )}
-              </motion.div>
-            </TabsContent>
+            {/* Projects tab */}
+            <ProjectTab language={language} projects={projects || []} />
 
-            <TabsContent value="projects" className="mt-0 outline-none">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="mb-8">
-                  <h2 className="text-3xl font-bold mb-2">
-                    {language === "en" ? "Featured Projects" : "Projets Phares"}
-                  </h2>
-                  <p className="text-muted-foreground">
-                    {language === "en"
-                      ? "A selection of my recent work."
-                      : "Une sélection de mes travaux récents."}
-                  </p>
-                </div>
-
-                {projects && (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-                    {projects.map((project, idx) => (
-                      <ProjectCard
-                        key={project.id}
-                        project={{
-                          ...project,
-                          link: project.link ?? null,
-                          imageUrl: project.imageUrl ?? null,
-                        }}
-                        index={idx}
-                      />
-                    ))}
-                  </div>
-                )}
-              </motion.div>
-            </TabsContent>
-
-            <AccomplishmentTab language={language} accomplishments={accomplishments || []} />
+            {/* Accomplishment tab */}
+            <AccomplishmentTab
+              language={language}
+              accomplishments={accomplishments || []}
+            />
           </AnimatePresence>
         </div>
       </Tabs>
