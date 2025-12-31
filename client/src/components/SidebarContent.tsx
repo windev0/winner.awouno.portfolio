@@ -1,12 +1,10 @@
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
-import { ContactDialog } from "@/components/ContactDialog";
 import {
   Github,
   Linkedin,
-  Download,
 } from "lucide-react";
-import { Button } from "./ui/button";
+import Footer from "./Footer";
 
 
 interface SidebarContentProps {
@@ -83,23 +81,7 @@ const SidebarContent = ({ language, profile }: SidebarContentProps) => {
       </div>
 
       {/* Footer Actions */}
-      <div className="space-y-4 w-full">
-        <ContactDialog />
-        <a
-          href="https://drive.google.com/uc?export=download&id=1OoReiQ_7z938BtQOSGhsv4C9YLaAygWf"
-          download="AWOUNO_WINNER_CV.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button
-            variant="outline"
-            className="w-full border-primary/20 hover:border-primary/50 hover:bg-primary/5"
-          >
-            <Download className="w-4 h-4 mr-2" />
-            {language === "en" ? "Download CV" : "Télécharger CV"}
-          </Button>
-        </a>
-      </div>
+      <Footer language={language || "en"} />
     </div>
   );
 };

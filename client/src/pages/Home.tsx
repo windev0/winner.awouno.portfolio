@@ -122,7 +122,7 @@ export default function Home() {
       </div>
 
       {/* Desktop Fixed Sidebar (Left) */}
-      <aside className="hidden md:block w-[350px] lg:w-[400px] h-full border-r border-border bg-card/30 backdrop-blur-sm overflow-hidden relative">
+      <aside className="hidden md:block w-[350px] lg:w-[450px] h-full border-r border-border bg-card/30 backdrop-blur-sm overflow-hidden relative">
         <SidebarContent profile={profile} language={language} />
       </aside>
 
