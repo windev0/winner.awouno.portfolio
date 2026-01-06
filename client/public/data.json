@@ -121,8 +121,8 @@
       "descriptionEn": "Memory sharing platform. Publish memories, comments, news feed. User auth and real-time DB with Appwrite. Donation system.",
       "descriptionFr": "Plateforme de partage de souvenirs. Publication, commentaires, fil d'actualité. Authentification et base de données temps réel (Appwrite).",
       "techStack": ["React", "Appwrite", "Vercel"],
-      "link": "#",
-      "imageUrl": null
+      "link": "https://festive-creator.vercel.app/",
+      "imageUrl": "/assets/img/projects/festive.png"
     },
     {
       "id": 2,
@@ -132,7 +132,7 @@
       "descriptionFr": "Application de gestion communautaire pour la gestion d'événements et notifications.",
       "techStack": ["Flutter", "Firebase"],
       "link": "#",
-      "imageUrl": null
+      "imageUrl": "/assets/img/projects/miabe2.jpeg"
     },
     {
       "id": 3,
@@ -141,8 +141,8 @@
       "descriptionEn": "Enterprise Resource Planning system interfaces and API.",
       "descriptionFr": "Interfaces et API pour système de planification des ressources d'entreprise.",
       "techStack": ["React", "TypeScript", "NestJS"],
-      "link": "#",
-      "imageUrl": null
+      "link": "https://dev.core.infinitus.pro/auth/login",
+      "imageUrl": "/assets/img/projects/api-infitinitus.png"
     },
     {
       "id": 4,
@@ -151,8 +151,8 @@
       "descriptionEn": "URL shortener application. Create short links, track analytics, and manage redirects.",
       "descriptionFr": "Application de raccourcisseur de lien. Créer des liens courts, suivre les analyses et gérer les redirections.",
       "techStack": ["React", "Node.js", "PostgreSQL"],
-      "link": "#",
-      "imageUrl": null
+      "link": "https://link-shortener-ivory-beta.vercel.app/",
+      "imageUrl": "/assets/img/projects/link.jpg"
     },
     {
       "id": 5,
@@ -162,7 +162,7 @@
       "descriptionFr": "Jeu 2D développé en Python. Gameplay interactif avec physique, collisions et effets sonores.",
       "techStack": ["Python", "Pygame"],
       "link": "#",
-      "imageUrl": null
+      "imageUrl": "/assets/img/projects/2D.png"
     }
   ],
   "accomplishments": [
