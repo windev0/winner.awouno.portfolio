@@ -116,6 +116,16 @@
   "projects": [
     {
       "id": 1,
+      "title": "Intervox",
+      "category": "fullstack",
+      "descriptionEn": "Web platform for AI-powered job interview simulation. Question generation, answer analysis, instant feedback.",
+      "descriptionFr": "Plateforme web de simulation d'entretiens d'embauche avec IA. Génération de questions, analyse des réponses, feedback instantané.",
+      "techStack": ["React", "Vapi", "Vercel"],
+      "link": "https://github.com/windev0/intervox/",
+      "imageUrl": "/assets/img/projects/intervox.png"
+    },
+    {
+      "id": 2,
       "title": "Festive Creator",
       "category": "fullstack",
       "descriptionEn": "Memory sharing platform. Publish memories, comments, news feed. User auth and real-time DB with Appwrite. Donation system.",
@@ -125,7 +135,7 @@
       "imageUrl": "/assets/img/projects/festive.png"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Community App",
       "category": "mobile",
       "descriptionEn": "Community management application for event handling and notifications.",
@@ -135,7 +145,7 @@
       "imageUrl": "/assets/img/projects/miabe2.jpeg"
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "C-APPS ERP",
       "category": "fullstack",
       "descriptionEn": "Enterprise Resource Planning system interfaces and API.",
@@ -145,7 +155,7 @@
       "imageUrl": "/assets/img/projects/api-infitinitus.png"
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Link Shortener",
       "category": "fullstack",
       "descriptionEn": "URL shortener application. Create short links, track analytics, and manage redirects.",
@@ -155,7 +165,7 @@
       "imageUrl": "/assets/img/projects/link.jpg"
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "2D Video Game",
       "category": "frontend",
       "descriptionEn": "2D game built with Python. Interactive gameplay with physics, collisions, and sound effects.",
