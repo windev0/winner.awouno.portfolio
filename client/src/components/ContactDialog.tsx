@@ -2,15 +2,31 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogFooter,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { useContact } from "@/hooks/use-portfolio";
 import { useLanguage } from "@/hooks/use-language";
 import { useToast } from "@/hooks/use-toast";
 import { Send, Loader2, Mail } from "lucide-react";
+import { sendEmail } from "@/lib/message";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -23,7 +39,7 @@ export function ContactDialog() {
   const { language } = useLanguage();
   const { toast } = useToast();
   const contactMutation = useContact();
-  
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,35 +49,59 @@ export function ContactDialog() {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    contactMutation.mutate(values, {
-      onSuccess: () => {
-        toast({
-          title: language === 'en' ? "Message sent!" : "Message envoyé !",
-          description: language === 'en' ? "Thanks for reaching out. I'll get back to you soon." : "Merci de m'avoir contacté. Je vous répondrai bientôt.",
-        });
-        setOpen(false);
-        form.reset();
-      },
-      onError: () => {
-        toast({
-          variant: "destructive",
-          title: "Error",
-          description: language === 'en' ? "Failed to send message. Please try again." : "Échec de l'envoi du message. Veuillez réessayer.",
-        });
-      }
-    });
-  };
+  // const onSubmit = (values: z.infer<typeof formSchema>) => {
+  //   contactMutation.mutate(values, {
+  //     onSuccess: () => {
+  //       toast({
+  //         title: language === 'en' ? "Message sent!" : "Message envoyé !",
+  //         description: language === 'en' ? "Thanks for reaching out. I'll get back to you soon." : "Merci de m'avoir contacté. Je vous répondrai bientôt.",
+  //       });
+  //       setOpen(false);
+  //       form.reset();
+  //     },
+  //     onError: () => {
+  //       toast({
+  //         variant: "destructive",
+  //         title: "Error",
+  //         description: language === 'en' ? "Failed to send message. Please try again." : "Échec de l'envoi du message. Veuillez réessayer.",
+  //       });
+  //     }
+  //   });
+  // };
+
+  async function onSubmit() {
+    try {
+      // const message = await client.sendAsync({
+      //   text: form.getValues("message"),
+      //   from: user,
+      //   to: form.getValues("email"),
+      //   subject: `New message from ${form.getValues("name")}`,
+      // });
+      console.log(form.getValues("name"), form.getValues("message"));
+      const email = form.getValues("email");
+      const name = form.getValues("name");
+      const msg = form.getValues("message");
+      const emailIsSend = sendEmail(email, name, msg);
+      console.log("Email sent successfully:", emailIsSend);
+    } catch (err) {
+      console.error("Failed to send email:", err);
+    } finally {
+      // client.smtp.close(); // Don't forget to close the connection!
+    }
+  }
 
   const t = {
-    trigger: language === 'en' ? 'Contact Me' : 'Me Contacter',
-    title: language === 'en' ? 'Get in Touch' : 'Entrer en Contact',
-    desc: language === 'en' ? 'Fill out the form below to send me a message.' : 'Remplissez le formulaire ci-dessous pour m\'envoyer un message.',
-    name: language === 'en' ? 'Name' : 'Nom',
-    email: 'Email',
-    message: 'Message',
-    send: language === 'en' ? 'Send Message' : 'Envoyer Message',
-    sending: language === 'en' ? 'Sending...' : 'Envoi...',
+    trigger: language === "en" ? "Contact Me" : "Me Contacter",
+    title: language === "en" ? "Get in Touch" : "Entrer en Contact",
+    desc:
+      language === "en"
+        ? "Fill out the form below to send me a message."
+        : "Remplissez le formulaire ci-dessous pour m'envoyer un message.",
+    name: language === "en" ? "Name" : "Nom",
+    email: "Email",
+    message: "Message",
+    send: language === "en" ? "Send Message" : "Envoyer Message",
+    sending: language === "en" ? "Sending..." : "Envoi...",
   };
 
   return (
@@ -112,10 +152,14 @@ export function ContactDialog() {
                 <FormItem>
                   <FormLabel>{t.message}</FormLabel>
                   <FormControl>
-                    <Textarea 
-                      placeholder={language === 'en' ? "Project details..." : "Détails du projet..."} 
-                      className="resize-none min-h-[100px]" 
-                      {...field} 
+                    <Textarea
+                      placeholder={
+                        language === "en"
+                          ? "Project details..."
+                          : "Détails du projet..."
+                      }
+                      className="resize-none min-h-[100px]"
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage />
@@ -123,7 +167,11 @@ export function ContactDialog() {
               )}
             />
             <DialogFooter className="pt-4">
-              <Button type="submit" disabled={contactMutation.isPending} className="w-full">
+              <Button
+                type="submit"
+                disabled={contactMutation.isPending}
+                className="w-full"
+              >
                 {contactMutation.isPending ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
