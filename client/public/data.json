@@ -132,7 +132,7 @@
   "descriptionFr": "Jeu de quiz technologique avec 300 questions réparties sur trois niveaux de difficulté. Il couvre les fondateurs de la tech, les créateurs d’outils, la reconnaissance de logos, l’histoire de la tech, ainsi que les frameworks, outils, protocoles et systèmes. Interface interactive avec scoring et classement global.",
   "techStack": ["React", "TypeScript", "TailwindCSS", "Vite", "Zustand ", "Redux Toolkit"],
   "link": "https://tech-quiz-play.base44.app/",
-  "imageUrl": "/assets/img/projects/techgame.png"
+  "imageUrl": "/assets/img/projects/techgame_.png"
 },
 {
   "id": 3,
@@ -142,7 +142,7 @@
   "descriptionFr": "Application web ludique où les utilisateurs doivent deviner le résultat, l’erreur ou l’effet système d’un snippet de code le plus vite possible. L’application propose 3 niveaux allant des bases en JavaScript, Python et Bash à des pièges plus avancés.Interface interactive avec scoring et classement global ",
   "techStack": ["React", "TypeScript", "TailwindCSS", "Vite"],
   "link": "https://code-trap-flow.base44.app/",
-  "imageUrl": "/assets/img/projects/code-trap.png"
+  "imageUrl": "/assets/img/projects/techgame.png"
 }
     {
       "id": 4,
