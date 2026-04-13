@@ -145,7 +145,17 @@
   "imageUrl": "/assets/img/projects/techgame.png"
 },
     {
-      "id": 4,
+  "id": 4,
+  "title": "Animation UI",
+  "category": "frontend",
+  "descriptionEn": "Interactive React project showcasing animated user interfaces built with GSAP. Includes moving vehicle simulations, dynamic hero text effects, and a visual chemistry experiment inspired by Fehling's solution.",
+  "descriptionFr": "Projet React interactif présentant plusieurs interfaces animées avec GSAP. Il inclut une simulation de véhicules en mouvement, des effets de texte dynamiques dans une hero section et une expérience chimique visuelle inspirée de la liqueur de Fehling.",
+  "techStack": ["React", "TypeScript", "Vite", "TailwindCSS", "GSAP"],
+  "link": "#",
+  "imageUrl": "/assets/img/projects/animation-ui.png"
+},
+    {
+      "id": 5,
       "title": "Festive Creator",
       "category": "fullstack",
       "descriptionEn": "Memory sharing platform. Publish memories, comments, news feed. User auth and real-time DB with Appwrite. Donation system.",
@@ -155,7 +165,7 @@
       "imageUrl": "/assets/img/projects/festive.png"
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Community App",
       "category": "mobile",
       "descriptionEn": "Community management application for event handling and notifications.",
@@ -165,7 +175,7 @@
       "imageUrl": "/assets/img/projects/miabe2.jpeg"
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "C-APPS ERP",
       "category": "fullstack",
       "descriptionEn": "Enterprise Resource Planning system interfaces and API.",
@@ -175,7 +185,7 @@
       "imageUrl": "/assets/img/projects/api-infitinitus.png"
     },
     {
-      "id": 7,
+      "id": 8,
       "title": "Link Shortener",
       "category": "fullstack",
       "descriptionEn": "URL shortener application. Create short links, track analytics, and manage redirects.",
@@ -185,7 +195,7 @@
       "imageUrl": "/assets/img/projects/link.jpg"
     },
     {
-      "id": 8,
+      "id": 9,
       "title": "2D Video Game",
       "category": "frontend",
       "descriptionEn": "2D game built with Python. Interactive gameplay with physics, collisions, and sound effects.",
