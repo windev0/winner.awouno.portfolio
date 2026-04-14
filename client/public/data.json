@@ -151,7 +151,7 @@
   "descriptionEn": "Interactive React project showcasing animated user interfaces built with GSAP. Includes moving vehicle simulations, dynamic hero text effects, and a visual chemistry experiment inspired by Fehling's solution.",
   "descriptionFr": "Projet React interactif présentant plusieurs interfaces animées avec GSAP. Il inclut une simulation de véhicules en mouvement, des effets de texte dynamiques dans une hero section et une expérience chimique visuelle inspirée de la liqueur de Fehling.",
   "techStack": ["React", "TypeScript", "Vite", "TailwindCSS", "GSAP"],
-  "link": "#",
+  "link": "https://react-animated-ui.vercel.app/",
   "imageUrl": "/assets/img/projects/animation-ui.png"
 },
     {
