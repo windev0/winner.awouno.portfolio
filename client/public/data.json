@@ -213,6 +213,26 @@
   "techStack": ["React", "Web Speech API", "QR Code", "Clipboard API"],
   "link": "#",
   "imageUrl": "/assets/img/projects/speech-to-text.png"
+},
+    {
+  "id": 7,
+  "title": "Skip Size Redesign",
+  "category": "frontend",
+  "descriptionEn": "Redesigned version of the WeWantWaste \"Choose your skip size\" page with a clean, responsive UI and dynamic light/dark theme support. Built for a smooth user experience and ready for integration.",
+  "descriptionFr": "Version redesign de la page « Choose your skip size » de WeWantWaste avec une interface propre, responsive et un support dynamique du mode clair/sombre. Conçue pour offrir une expérience fluide et être directement intégrable.",
+  "techStack": ["React 19", "TypeScript", "Vite", "Tailwind CSS", "React Query", "Axios", "React Router DOM", "Context API"],
+  "link": "https://we-want-waste-nine.vercel.app/skips",
+  "imageUrl": "/assets/img/projects/skip-size-redesign.png"
+},
+    {
+  "id": 11,
+  "title": "EduLink",
+  "category": "fullstack",
+  "descriptionEn": "Comprehensive educational platform for all educational actors. Connects students, teachers, and learning enthusiasts with exams, collaborative study groups, private tutoring, and more.",
+  "descriptionFr": "Plateforme éducative complète pour tous les acteurs éducatifs. Connecte étudiants, enseignants et passionnés avec des épreuves, groupes de travail collaboratifs, enseignants particuliers et bien plus.",
+  "techStack": ["React", "NestJS", "PostgreSQL"],
+  "link": "https://edulink-gamma.vercel.app/",
+  "imageUrl": "/assets/img/projects/edulink.png"
 }
   ],
   "accomplishments": [
