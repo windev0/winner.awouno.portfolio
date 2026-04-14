@@ -211,7 +211,7 @@
   "descriptionEn": "Real-time speech-to-text web app built with React and the Web Speech API. Includes instant transcription, one-click copy to clipboard, and QR code generation for easy sharing.",
   "descriptionFr": "Application web de transcription vocale en temps réel construite avec React et la Web Speech API. Elle inclut la transcription instantanée, la copie en un clic dans le presse-papiers et la génération d’un QR code pour faciliter le partage.",
   "techStack": ["React", "Web Speech API", "QR Code", "Clipboard API"],
-  "link": "#",
+  "link": "https://windev0.github.io/speech_to_text/",
   "imageUrl": "/assets/img/projects/speech-to-text.png"
 },
     {
