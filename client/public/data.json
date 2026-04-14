@@ -233,6 +233,16 @@
   "techStack": ["React", "NestJS", "PostgreSQL"],
   "link": "https://edulink-gamma.vercel.app/",
   "imageUrl": "/assets/img/projects/edulink.png"
+},
+    {
+  "id": 12,
+  "title": "Salve Regina",
+  "category": "fullstack",
+  "descriptionEn": "Comprehensive dental practice management platform. Patient records, appointments, treatments, billing, and administrative tools built for efficient clinic operations.",
+  "descriptionFr": "Plateforme complète de gestion de cabinet dentaire. Dossiers patients, rendez-vous, traitements, facturation et outils administratifs pour une gestion efficace du cabinet.",
+  "techStack": ["NestJS", "Swagger", "PostgreSQL"],
+  "link": "https://cabinet-salve-regina.onrender.com/",
+  "imageUrl": "/assets/img/projects/salve-regina-api.png"
 }
   ],
   "accomplishments": [
