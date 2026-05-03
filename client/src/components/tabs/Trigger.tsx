@@ -3,7 +3,7 @@ import { TabsTrigger } from "../ui/tabs";
 import { Layers } from "lucide-react";
 
 interface TriggerProps {
-    value: string;
+  value: string;
   label: string;
 }
 const CustomTabTrigger = ({ label, value }: TriggerProps) => {

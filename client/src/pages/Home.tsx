@@ -24,10 +24,11 @@ import ProjectTab from "@/components/tabs/Project";
 import SkillsTab from "@/components/tabs/Skills";
 import ExperienceTab from "@/components/tabs/Experience";
 import CustomTabTrigger from "@/components/tabs/Trigger";
+import AboutMeTab from "@/components/tabs/AboutMeTab";
 
 export default function Home() {
   const { language } = useLanguage();
-  const [activeTab, setActiveTab] = useState("experience");
+  const [activeTab, setActiveTab] = useState("user");
 
   // Data Fetching
   const { data: profile, isLoading: profileLoading } = useProfile();
@@ -60,17 +61,18 @@ export default function Home() {
   if (!profile) return null;
 
   const tabsLabels = {
+    user: language === "en" ? "About" : "À propos",
     experience: language === "en" ? "Experience" : "Expérience",
     skills: language === "en" ? "Skills" : "Compétences",
     projects: language === "en" ? "Projects" : "Projets",
     accomplishments: language === "en" ? "Awards" : "Récompenses",
   };
-  
+
   const MainContent = () => (
-    <div className="p-6 md:p-12 lg:p-16 max-w-5xl mx-auto">
+    <div className="p-6 md:p-12 lg:p-16 max-w-6xl mx-auto ">
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <div className="sticky top-0 z-20 bg-background/80 backdrop-blur-lg pb-6 pt-2">
-          <TabsList className="w-full grid grid-cols-4 h-14 p-1 bg-secondary/50 rounded-xl">
+          <TabsList className="w-full grid grid-cols-5 h-14 p-1 bg-secondary/50 rounded-xl">
             {Object.entries(tabsLabels).map(([key, label]) => (
               <CustomTabTrigger value={key} key={key} label={label} />
             ))}
@@ -79,6 +81,9 @@ export default function Home() {
 
         <div className="mt-8 min-h-[60vh]">
           <AnimatePresence mode="wait">
+            {/* About me*/}
+            <AboutMeTab language={language} />
+
             {/* Experience tab */}
             <ExperienceTab
               language={language}

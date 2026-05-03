@@ -10,6 +10,12 @@
     "avatarUrl": "/assets/img/profile.jpg"
   },
   "skills": [
+       {
+      "id": 1,
+      "name": "JavaScript",
+      "category": "Frontend",
+      "iconName": "SiJavascript"
+    },
     {
       "id": 1,
       "name": "React.js",
@@ -33,6 +39,18 @@
       "name": "TailwindCSS",
       "category": "Frontend",
       "iconName": "SiTailwindcss"
+    },
+     {
+      "id": 23,
+      "name": "Java",
+      "category": "Backend",
+      "iconName": "SiJAVA"
+    },
+     {
+      "id": 24,
+      "name": "PHP",
+      "category": "Backend",
+      "iconName": "SiPhp"
     },
     {
       "id": 5,
@@ -65,10 +83,28 @@
       "iconName": "SiSymfony"
     },
     {
+      "id": 18,
+      "name": "Supabase",
+      "category": "Backend",
+      "iconName": "SiSupabase"
+    },
+    {
+      "id": 19,
+      "name": "Appwrite",
+      "category": "Backend",
+      "iconName": "SiAppwrite"
+    },
+    {
       "id": 10,
       "name": "Flutter",
       "category": "Mobile",
       "iconName": "SiFlutter"
+    },
+    {
+      "id": 20,
+      "name": "ReactNative",
+      "category": "Mobile",
+      "iconName": "SiReactNative"
     },
     { "id": 11, "name": "Dart", "category": "Mobile", "iconName": "SiDart" },
     {
@@ -83,6 +119,12 @@
       "category": "Database",
       "iconName": "SiMongodb"
     },
+     {
+      "id": 21,
+      "name": "Oracle",
+      "category": "Database",
+      "iconName": "SiOracle"
+    },
     {
       "id": 14,
       "name": "Firebase",
@@ -94,6 +136,15 @@
     { "id": 17, "name": "Figma", "category": "Tools", "iconName": "SiFigma" }
   ],
   "experiences": [
+    {
+      "id": 0,
+      "roleEn": "Fullstack Web Developer",
+      "roleFr": "Développeur web Fullstack",
+      "company": "Réseau des Togolais et Togolaises de Rennes (RTTR)",
+      "period": "Avril 2026 - Juin 2026",
+      "descriptionEn": "Developed interfaces for RTTR website (React/TS + supabase). Event publication, skill bank, membership. Figma design.",
+      "descriptionFr": "Développement d'interfaces pour le site de RTTR (React/TS + supabase). Publication d'évènements, banque de compétences, adhésion. Design figma"
+    },
     {
       "id": 1,
       "roleEn": "Fullstack Web Developer",
@@ -125,35 +176,42 @@
       "imageUrl": "/assets/img/projects/intervox.png"
     },
     {
-  "id": 2,
-  "title": "TechGame",
-  "category": "fullstack",
-  "descriptionEn": "Technology quiz game with 300 questions across three difficulty levels. Covers tech founders, tool creators, logos, frameworks, protocols, and tech history. Built with an interactive scoring and global ranking system.",
-  "descriptionFr": "Jeu de quiz technologique avec 300 questions réparties sur trois niveaux de difficulté. Il couvre les fondateurs de la tech, les créateurs d’outils, la reconnaissance de logos, l’histoire de la tech, ainsi que les frameworks, outils, protocoles et systèmes. Interface interactive avec scoring et classement global.",
-  "techStack": ["React", "TypeScript", "TailwindCSS", "Vite", "Zustand ", "Redux Toolkit"],
-  "link": "https://tech-quiz-play.base44.app/",
-  "imageUrl": "/assets/img/projects/techgame_.png"
-},
-{
-  "id": 3,
-  "title": "CodeTrap",
-  "category": "fullstack",
-  "descriptionEn": "Fun web app where users guess the result, error, or system effect of short code snippets as fast as possible. Includes three difficulty levels from basic JavaScript, Python, and Bash to more advanced programming traps.",
-  "descriptionFr": "Application web ludique où les utilisateurs doivent deviner le résultat, l’erreur ou l’effet système d’un snippet de code le plus vite possible. L’application propose 3 niveaux allant des bases en JavaScript, Python et Bash à des pièges plus avancés.Interface interactive avec scoring et classement global ",
-  "techStack": ["React", "TypeScript", "TailwindCSS", "Vite"],
-  "link": "https://code-trap-flow.base44.app/",
-  "imageUrl": "/assets/img/projects/techgame.png"
-},
+      "id": 2,
+      "title": "TechGame",
+      "category": "fullstack",
+      "descriptionEn": "Technology quiz game with 300 questions across three difficulty levels. Covers tech founders, tool creators, logos, frameworks, protocols, and tech history. Built with an interactive scoring and global ranking system.",
+      "descriptionFr": "Jeu de quiz technologique avec 300 questions réparties sur trois niveaux de difficulté. Il couvre les fondateurs de la tech, les créateurs d’outils, la reconnaissance de logos, l’histoire de la tech, ainsi que les frameworks, outils, protocoles et systèmes. Interface interactive avec scoring et classement global.",
+      "techStack": [
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Vite",
+        "Zustand ",
+        "Redux Toolkit"
+      ],
+      "link": "https://tech-quiz-play.base44.app/",
+      "imageUrl": "/assets/img/projects/techgame_.png"
+    },
     {
-  "id": 4,
-  "title": "Animation UI",
-  "category": "frontend",
-  "descriptionEn": "Interactive React project showcasing animated user interfaces built with GSAP. Includes moving vehicle simulations, dynamic hero text effects, and a visual chemistry experiment inspired by Fehling's solution.",
-  "descriptionFr": "Projet React interactif présentant plusieurs interfaces animées avec GSAP. Il inclut une simulation de véhicules en mouvement, des effets de texte dynamiques dans une hero section et une expérience chimique visuelle inspirée de la liqueur de Fehling.",
-  "techStack": ["React", "TypeScript", "Vite", "TailwindCSS", "GSAP"],
-  "link": "https://react-animated-ui.vercel.app/",
-  "imageUrl": "/assets/img/projects/animation-ui.png"
-},
+      "id": 3,
+      "title": "CodeTrap",
+      "category": "fullstack",
+      "descriptionEn": "Fun web app where users guess the result, error, or system effect of short code snippets as fast as possible. Includes three difficulty levels from basic JavaScript, Python, and Bash to more advanced programming traps.",
+      "descriptionFr": "Application web ludique où les utilisateurs doivent deviner le résultat, l’erreur ou l’effet système d’un snippet de code le plus vite possible. L’application propose 3 niveaux allant des bases en JavaScript, Python et Bash à des pièges plus avancés.Interface interactive avec scoring et classement global ",
+      "techStack": ["React", "TypeScript", "TailwindCSS", "Vite"],
+      "link": "https://code-trap-flow.base44.app/",
+      "imageUrl": "/assets/img/projects/techgame.png"
+    },
+    {
+      "id": 4,
+      "title": "Animation UI",
+      "category": "frontend",
+      "descriptionEn": "Interactive React project showcasing animated user interfaces built with GSAP. Includes moving vehicle simulations, dynamic hero text effects, and a visual chemistry experiment inspired by Fehling's solution.",
+      "descriptionFr": "Projet React interactif présentant plusieurs interfaces animées avec GSAP. Il inclut une simulation de véhicules en mouvement, des effets de texte dynamiques dans une hero section et une expérience chimique visuelle inspirée de la liqueur de Fehling.",
+      "techStack": ["React", "TypeScript", "Vite", "TailwindCSS", "GSAP"],
+      "link": "https://react-animated-ui.vercel.app/",
+      "imageUrl": "/assets/img/projects/animation-ui.png"
+    },
     {
       "id": 5,
       "title": "Festive Creator",
@@ -205,47 +263,67 @@
       "imageUrl": "/assets/img/projects/2D.png"
     },
     {
-  "id": 10,
-  "title": "Speech to Text",
-  "category": "frontend",
-  "descriptionEn": "Real-time speech-to-text web app built with React and the Web Speech API. Includes instant transcription, one-click copy to clipboard, and QR code generation for easy sharing.",
-  "descriptionFr": "Application web de transcription vocale en temps réel construite avec React et la Web Speech API. Elle inclut la transcription instantanée, la copie en un clic dans le presse-papiers et la génération d’un QR code pour faciliter le partage.",
-  "techStack": ["React", "Web Speech API", "QR Code", "Clipboard API"],
-  "link": "https://windev0.github.io/speech_to_text/",
-  "imageUrl": "/assets/img/projects/speech-to-text.png"
-},
+      "id": 10,
+      "title": "Speech to Text",
+      "category": "frontend",
+      "descriptionEn": "Real-time speech-to-text web app built with React and the Web Speech API. Includes instant transcription, one-click copy to clipboard, and QR code generation for easy sharing.",
+      "descriptionFr": "Application web de transcription vocale en temps réel construite avec React et la Web Speech API. Elle inclut la transcription instantanée, la copie en un clic dans le presse-papiers et la génération d’un QR code pour faciliter le partage.",
+      "techStack": ["React", "Web Speech API", "QR Code", "Clipboard API"],
+      "link": "https://windev0.github.io/speech_to_text/",
+      "imageUrl": "/assets/img/projects/speech-to-text.png"
+    },
     {
-  "id": 7,
-  "title": "Skip Size Redesign",
-  "category": "frontend",
-  "descriptionEn": "Redesigned version of the WeWantWaste \"Choose your skip size\" page with a clean, responsive UI and dynamic light/dark theme support. Built for a smooth user experience and ready for integration.",
-  "descriptionFr": "Version redesign de la page « Choose your skip size » de WeWantWaste avec une interface propre, responsive et un support dynamique du mode clair/sombre. Conçue pour offrir une expérience fluide et être directement intégrable.",
-  "techStack": ["React 19", "TypeScript", "Vite", "Tailwind CSS", "React Query", "Axios", "React Router DOM", "Context API"],
-  "link": "https://we-want-waste-nine.vercel.app/skips",
-  "imageUrl": "/assets/img/projects/skip-size-redesign.png"
-},
+      "id": 7,
+      "title": "Skip Size Redesign",
+      "category": "frontend",
+      "descriptionEn": "Redesigned version of the WeWantWaste \"Choose your skip size\" page with a clean, responsive UI and dynamic light/dark theme support. Built for a smooth user experience and ready for integration.",
+      "descriptionFr": "Version redesign de la page « Choose your skip size » de WeWantWaste avec une interface propre, responsive et un support dynamique du mode clair/sombre. Conçue pour offrir une expérience fluide et être directement intégrable.",
+      "techStack": [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "React Query",
+        "Axios",
+        "React Router DOM",
+        "Context API"
+      ],
+      "link": "https://we-want-waste-nine.vercel.app/skips",
+      "imageUrl": "/assets/img/projects/skip-size-redesign.png"
+    },
     {
-  "id": 11,
-  "title": "EduLink",
-  "category": "fullstack",
-  "descriptionEn": "Comprehensive educational platform for all educational actors. Connects students, teachers, and learning enthusiasts with exams, collaborative study groups, private tutoring, and more.",
-  "descriptionFr": "Plateforme éducative complète pour tous les acteurs éducatifs. Connecte étudiants, enseignants et passionnés avec des épreuves, groupes de travail collaboratifs, enseignants particuliers et bien plus.",
-  "techStack": ["React", "NestJS", "PostgreSQL"],
-  "link": "https://edulink-gamma.vercel.app/",
-  "imageUrl": "/assets/img/projects/edulink.png"
-},
+      "id": 11,
+      "title": "EduLink",
+      "category": "fullstack",
+      "descriptionEn": "Comprehensive educational platform for all educational actors. Connects students, teachers, and learning enthusiasts with exams, collaborative study groups, private tutoring, and more.",
+      "descriptionFr": "Plateforme éducative complète pour tous les acteurs éducatifs. Connecte étudiants, enseignants et passionnés avec des épreuves, groupes de travail collaboratifs, enseignants particuliers et bien plus.",
+      "techStack": ["React", "NestJS", "PostgreSQL"],
+      "link": "https://edulink-gamma.vercel.app/",
+      "imageUrl": "/assets/img/projects/edulink.png"
+    },
     {
-  "id": 12,
-  "title": "Salve Regina",
-  "category": "fullstack",
-  "descriptionEn": "Comprehensive dental practice management platform. Patient records, appointments, treatments, billing, and administrative tools built for efficient clinic operations.",
-  "descriptionFr": "Plateforme complète de gestion de cabinet dentaire. Dossiers patients, rendez-vous, traitements, facturation et outils administratifs pour une gestion efficace du cabinet.",
-  "techStack": ["NestJS", "Swagger", "PostgreSQL"],
-  "link": "https://cabinet-salve-regina.onrender.com/",
-  "imageUrl": "/assets/img/projects/salve-regina-api.png"
-}
+      "id": 12,
+      "title": "Salve Regina",
+      "category": "fullstack",
+      "descriptionEn": "Comprehensive dental practice management platform. Patient records, appointments, treatments, billing, and administrative tools built for efficient clinic operations.",
+      "descriptionFr": "Plateforme complète de gestion de cabinet dentaire. Dossiers patients, rendez-vous, traitements, facturation et outils administratifs pour une gestion efficace du cabinet.",
+      "techStack": ["NestJS", "Swagger", "PostgreSQL"],
+      "link": "https://cabinet-salve-regina.onrender.com/",
+      "imageUrl": "/assets/img/projects/salve-regina-api.png"
+    }
   ],
   "accomplishments": [
+    {
+      "id": 0,
+      "titleEn": "Microsoft CI/CD with GitHub Actions Certification",
+      "titleFr": "Certification Microsoft CI/CD avec GitHub Actions",
+      "descriptionEn": "Microsoft certification in CI/CD with GitHub Actions. Validates skills in automating software delivery and DevOps practices using GitHub's CI/CD tools.",
+      "descriptionFr": "Certification Microsoft en CI/CD avec GitHub Actions. Valide les compétences en automatisation de la livraison logicielle et les pratiques DevOps utilisant les outils CI/CD de GitHub.",
+      "type": "certification",
+      "date": "April 2026",
+      "organization": "MIcrosoft",
+      "link": "https://learn.microsoft.com/en-us/users/winnerawouno-6589/achievements/duqchhpj"
+    },
     {
       "id": 1,
       "titleEn": "AI Certification",
