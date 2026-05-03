@@ -81,7 +81,27 @@ export function ContactDialog() {
       const email = form.getValues("email");
       const name = form.getValues("name");
       const msg = form.getValues("message");
-      const emailIsSend = sendEmail(email, name, msg);
+      const emailIsSend: string = sendEmail(email, name, msg);
+      if (emailIsSend.toLowerCase() == "ok") {
+        toast({
+          title: language === "en" ? "Message sent!" : "Message envoyé !",
+          description:
+            language === "en"
+              ? "Thanks for reaching out. I'll get back to you soon."
+              : "Merci de m'avoir contacté. Je vous répondrai bientôt.",
+        });
+        setOpen(false);
+        form.reset();
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description:
+            language === "en"
+              ? "Failed to send message. Please try again."
+              : "Échec de l'envoi du message. Veuillez réessayer.",
+        });
+      }
       console.log("Email sent successfully:", emailIsSend);
     } catch (err) {
       console.error("Failed to send email:", err);
