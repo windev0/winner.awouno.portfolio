@@ -1,5 +1,5 @@
 
-# DECOUVERTE DE LA PERSSONNE
+# DECOUVERTE DE LA PERSONNE
 
 ### 🔹 Qui je suis
 
