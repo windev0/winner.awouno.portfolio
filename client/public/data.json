@@ -171,7 +171,7 @@
       "category": "fullstack",
       "descriptionEn": "Developed interfaces for RTTR website (React/TS + supabase). Event publication, skill bank, membership. Figma design.",
       "descriptionFr": "Développement d'interfaces pour le site de RTTR (React/TS + supabase). Publication d'évènements, banque de compétences, adhésion. Design figma",
-      "techStack": ["React", "Vapi", "Vercel"],
+      "techStack": ["React", "TypeScript", "supabase", "Resend", "Hostinger"],
       "link": "https://rttr.fr",
       "imageUrl": "/assets/img/projects/rttr.png"
     },
