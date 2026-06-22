@@ -4,7 +4,6 @@ const publicKey = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
 const serviceId = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
 const templateId = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
 
-console.log("public key", publicKey);
 export const sendEmail = (email:string, name: string, msg: string): any => {
   const templateParams = {
     name,
