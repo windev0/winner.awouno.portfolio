@@ -8,7 +8,7 @@ const Footer = ({ language }: { language: string }) => {
     <div className="space-y-4 w-full">
       <ContactDialog />
       <a
-        href="https://drive.google.com/uc?export=download&id=1OoReiQ_7z938BtQOSGhsv4C9YLaAygWf"
+        href="https://drive.google.com/file/d/19cYH39OpHOkhPOKCUXpvOuZVM2Kk-E3m/view?usp=sharing"
         download="AWOUNO_WINNER_CV.pdf"
         target="_blank"
         rel="noopener noreferrer"
