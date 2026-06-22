@@ -61,11 +61,11 @@ export default function Home() {
   if (!profile) return null;
 
   const tabsLabels = {
-    user: language === "en" ? "About" : "À propos",
+    user: language === "en" ? "About" : "Moi",
     experience: language === "en" ? "Experience" : "Expérience",
-    skills: language === "en" ? "Skills" : "Compétences",
+    skills: language === "en" ? "Skills" : "Skills",
     projects: language === "en" ? "Projects" : "Projets",
-    accomplishments: language === "en" ? "Awards" : "Récompenses",
+    accomplishments: language === "en" ? "Awards" : "Awards",
   };
 
   const MainContent = () => (
