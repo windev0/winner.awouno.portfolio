@@ -82,7 +82,7 @@ export function ContactDialog() {
       const name = form.getValues("name");
       const msg = form.getValues("message");
       const emailIsSend: any = await sendEmail(email, name, msg);
-      if (emailIsSend.toLowerCase() == "ok") {
+      if (emailIsSend.toLowerCase() != null) {
         toast({
           title: language === "en" ? "Message sent!" : "Message envoyé !",
           description:
