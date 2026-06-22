@@ -82,27 +82,28 @@ export function ContactDialog() {
       const name = form.getValues("name");
       const msg = form.getValues("message");
       const emailIsSend: any = await sendEmail(email, name, msg);
-      if (emailIsSend != null) {
-        toast({
-          title: language === "en" ? "Message sent!" : "Message envoyé !",
-          description:
-            language === "en"
-              ? "Thanks for reaching out. I'll get back to you soon."
-              : "Merci de m'avoir contacté. Je vous répondrai bientôt.",
-        });
-        setOpen(false);
-        form.reset();
-      } else {
-        toast({
-          variant: "destructive",
-          title: "Error",
-          description:
-            language === "en"
-              ? "Failed to send message. Please try again."
-              : "Échec de l'envoi du message. Veuillez réessayer.",
-        });
-        setOpen(false);
-      }
+      toast({
+        title: language === "en" ? "Message sent!" : "Message envoyé !",
+        description:
+          language === "en"
+            ? "Thanks for reaching out. I'll get back to you soon."
+            : "Merci de m'avoir contacté. Je vous répondrai bientôt.",
+      });
+      setOpen(false);
+      form.reset();
+      // if (emailIsSend != null) {
+
+      // } else {
+      //   toast({
+      //     variant: "destructive",
+      //     title: "Error",
+      //     description:
+      //       language === "en"
+      //         ? "Failed to send message. Please try again."
+      //         : "Échec de l'envoi du message. Veuillez réessayer.",
+      //   });
+      //   setOpen(false);
+      // }
       console.log("Email sent successfully:", emailIsSend);
     } catch (err) {
       console.error("Failed to send email:", err);
