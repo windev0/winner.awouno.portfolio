@@ -71,12 +71,12 @@ export function ContactDialog() {
 
   async function onSubmit() {
     try {
-      // const message = await client.sendAsync({
-      //   text: form.getValues("message"),
-      //   from: user,
-      //   to: form.getValues("email"),
-      //   subject: `New message from ${form.getValues("name")}`,
-      // });
+      const message = await client.sendAsync({
+        text: form.getValues("message"),
+        from: user,
+        to: form.getValues("email"),
+        subject: `New message from ${form.getValues("name")}`,
+      });
       console.log(form.getValues("name"), form.getValues("message"));
       const email = form.getValues("email");
       const name = form.getValues("name");
@@ -106,7 +106,7 @@ export function ContactDialog() {
     } catch (err) {
       console.error("Failed to send email:", err);
     } finally {
-      // client.smtp.close(); // Don't forget to close the connection!
+      client.smtp.close(); // Don't forget to close the connection!
     }
   }
 
