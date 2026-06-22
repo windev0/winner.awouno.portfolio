@@ -292,16 +292,6 @@
       "imageUrl": "/assets/img/projects/skip-size-redesign.png"
     },
     {
-      "id": 11,
-      "title": "EduLink",
-      "category": "fullstack",
-      "descriptionEn": "Comprehensive educational platform for all educational actors. Connects students, teachers, and learning enthusiasts with exams, collaborative study groups, private tutoring, and more.",
-      "descriptionFr": "Plateforme éducative complète pour tous les acteurs éducatifs. Connecte étudiants, enseignants et passionnés avec des épreuves, groupes de travail collaboratifs, enseignants particuliers et bien plus.",
-      "techStack": ["React", "NestJS", "PostgreSQL"],
-      "link": "https://edulink-gamma.vercel.app/",
-      "imageUrl": "/assets/img/projects/edulink.png"
-    },
-    {
       "id": 12,
       "title": "Salve Regina",
       "category": "fullstack",
