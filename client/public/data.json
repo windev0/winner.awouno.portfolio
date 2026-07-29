@@ -11,6 +11,12 @@
   },
   "skills": [
        {
+      "id": 100,
+      "name": "Excel",
+      "category": "Data Analyst & BI",
+      "iconName": "SiExcel"
+    },
+       {
       "id": 1,
       "name": "JavaScript",
       "category": "Frontend",
@@ -136,6 +142,15 @@
     { "id": 17, "name": "Figma", "category": "Tools", "iconName": "SiFigma" }
   ],
   "experiences": [
+  {
+  "id": 41,
+  "roleEn": "Data Scientist Intern",
+  "roleFr": "Stagiaire Data Scientist",
+  "company": "AnalystDataLab Africa",
+  "period": "01 Juillet 2026 - 31 Aout 2026",
+  "descriptionEn": "Processed and analyzed datasets of over 50,000 records using Python. Performed data cleaning, preprocessing, exploratory data analysis (EDA), feature engineering and quality assessment. Built and evaluated Machine Learning and NLP models with Scikit-learn, including TF-IDF feature extraction for text classification. Used Pandas, NumPy and Matplotlib to develop end-to-end data science workflows.",
+  "descriptionFr": "Analyse et traitement de jeux de données de plus de 50 000 enregistrements avec Python : nettoyage, prétraitement, analyse exploratoire (EDA), ingénierie des caractéristiques et évaluation de la qualité des données. Développement et évaluation de modèles de Machine Learning et de NLP avec Scikit-learn, incluant l'extraction de caractéristiques par TF-IDF pour la classification de textes. Utilisation de Pandas, NumPy et Matplotlib pour concevoir des workflows complets de data science."
+},
     {
       "id": 0,
       "roleEn": "Fullstack Web Developer",
