@@ -10,32 +10,32 @@
     "avatarUrl": "/assets/img/profile.jpeg"
   },
   "skills": [
-       {
+    {
       "id": 100,
       "name": "Excel",
       "category": "Data Analyst & BI",
       "iconName": "SiExcel"
     },
-       {
+    {
       "id": 102,
       "name": "R",
       "category": "Data Analyst & BI",
       "iconName": "SiR"
     },
-        {
+    {
       "id": 101,
       "name": "Power BI",
       "category": "Data Analyst & BI",
       "iconName": "SiPowerBI"
     },
-       {
+    {
       "id": 1,
       "name": "JavaScript",
       "category": "Frontend",
       "iconName": "SiJavascript"
     },
     {
-      "id": 1,
+      "id": 103,
       "name": "React.js",
       "category": "Frontend",
       "iconName": "SiReact"
@@ -58,13 +58,13 @@
       "category": "Frontend",
       "iconName": "SiTailwindcss"
     },
-     {
+    {
       "id": 23,
       "name": "Java",
       "category": "Backend",
       "iconName": "SiJAVA"
     },
-     {
+    {
       "id": 24,
       "name": "PHP",
       "category": "Backend",
@@ -137,7 +137,7 @@
       "category": "Database",
       "iconName": "SiMongodb"
     },
-     {
+    {
       "id": 21,
       "name": "Oracle",
       "category": "Database",
@@ -154,15 +154,15 @@
     { "id": 17, "name": "Figma", "category": "Tools", "iconName": "SiFigma" }
   ],
   "experiences": [
-  {
-  "id": 41,
-  "roleEn": "Data Scientist Intern",
-  "roleFr": "Stagiaire Data Scientist",
-  "company": "AnalystDataLab Africa",
-  "period": "01 Juillet 2026 - 31 Aout 2026",
-  "descriptionEn": "Processed and analyzed datasets of over 50,000 records using Python. Performed data cleaning, preprocessing, exploratory data analysis (EDA), feature engineering and quality assessment. Built and evaluated Machine Learning and NLP models with Scikit-learn, including TF-IDF feature extraction for text classification. Used Pandas, NumPy and Matplotlib to develop end-to-end data science workflows.",
-  "descriptionFr": "Analyse et traitement de jeux de données de plus de 50 000 enregistrements avec Python : nettoyage, prétraitement, analyse exploratoire (EDA), ingénierie des caractéristiques et évaluation de la qualité des données. Développement et évaluation de modèles de Machine Learning et de NLP avec Scikit-learn, incluant l'extraction de caractéristiques par TF-IDF pour la classification de textes. Utilisation de Pandas, NumPy et Matplotlib pour concevoir des workflows complets de data science."
-},
+    {
+      "id": 41,
+      "roleEn": "Data Scientist Intern",
+      "roleFr": "Stagiaire Data Scientist",
+      "company": "AnalystDataLab Africa",
+      "period": "01 Juillet 2026 - 31 Aout 2026",
+      "descriptionEn": "Processed and analyzed datasets of over 50,000 records using Python. Performed data cleaning, preprocessing, exploratory data analysis (EDA), feature engineering and quality assessment. Built and evaluated Machine Learning and NLP models with Scikit-learn, including TF-IDF feature extraction for text classification. Used Pandas, NumPy and Matplotlib to develop end-to-end data science workflows.",
+      "descriptionFr": "Analyse et traitement de jeux de données de plus de 50 000 enregistrements avec Python : nettoyage, prétraitement, analyse exploratoire (EDA), ingénierie des caractéristiques et évaluation de la qualité des données. Développement et évaluation de modèles de Machine Learning et de NLP avec Scikit-learn, incluant l'extraction de caractéristiques par TF-IDF pour la classification de textes. Utilisation de Pandas, NumPy et Matplotlib pour concevoir des workflows complets de data science."
+    },
     {
       "id": 0,
       "roleEn": "Fullstack Web Developer",
@@ -203,25 +203,25 @@
       "imageUrl": "/assets/img/projects/rttr.png"
     },
     {
-  "id": 40,
-  "title": "Git Report AI",
-  "category": "fullstack",
-  "descriptionEn": "AI-powered platform that automatically analyzes Git repositories and generates professional activity reports from commit history. Features Git integration, report generation with LLMs, email delivery, authentication, dashboard analytics and subscription management. Built with a modern full-stack architecture focused on automation and productivity.",
-  "descriptionFr": "Plateforme SaaS propulsée par l'IA permettant d'analyser automatiquement les dépôts Git et de générer des rapports d'activité professionnels à partir de l'historique des commits. Intègre l'analyse des dépôts, la génération de rapports avec des LLM, l'envoi d'e-mails, l'authentification, un tableau de bord de suivi et la gestion des abonnements. Développée avec une architecture Full Stack moderne orientée automatisation et gain de productivité.",
-  "techStack": [
-    "React",
-    "TypeScript",
-    "TailwindCSS",
-    "FastAPI",
-    "Python",
-    "Supabase",
-    "PostgreSQL",
-    "Gemini API",
-    "GitHub API"
-  ],
-  "link": "#",
-  "imageUrl": "/assets/img/projects/git-report-ai.png"
-},
+      "id": 40,
+      "title": "Git Report AI",
+      "category": "fullstack",
+      "descriptionEn": "AI-powered platform that automatically analyzes Git repositories and generates professional activity reports from commit history. Features Git integration, report generation with LLMs, email delivery, authentication, dashboard analytics and subscription management. Built with a modern full-stack architecture focused on automation and productivity.",
+      "descriptionFr": "Plateforme SaaS propulsée par l'IA permettant d'analyser automatiquement les dépôts Git et de générer des rapports d'activité professionnels à partir de l'historique des commits. Intègre l'analyse des dépôts, la génération de rapports avec des LLM, l'envoi d'e-mails, l'authentification, un tableau de bord de suivi et la gestion des abonnements. Développée avec une architecture Full Stack moderne orientée automatisation et gain de productivité.",
+      "techStack": [
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "FastAPI",
+        "Python",
+        "Supabase",
+        "PostgreSQL",
+        "Gemini API",
+        "GitHub API"
+      ],
+      "link": "#",
+      "imageUrl": "/assets/img/projects/git-report-ai.png"
+    },
     {
       "id": 1,
       "title": "Intervox",
