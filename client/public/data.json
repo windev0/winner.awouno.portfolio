@@ -17,6 +17,18 @@
       "iconName": "SiExcel"
     },
        {
+      "id": 101,
+      "name": "R",
+      "category": "Data Analyst & BI",
+      "iconName": "SiR"
+    },
+        {
+      "id": 101,
+      "name": "Power BI",
+      "category": "Data Analyst & BI",
+      "iconName": "SiPowerBI"
+    },
+       {
       "id": 1,
       "name": "JavaScript",
       "category": "Frontend",
