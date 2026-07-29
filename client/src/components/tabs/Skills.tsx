@@ -37,7 +37,7 @@ const SkillsTab = ({ language, skills }: SkillsTabProps) => {
 
         {skills && skills.length > 0 && (
           <div className="space-y-8">
-            {["Frontend", "Backend", "Mobile", "Database", "Tools"].map(
+            {["Frontend", "Backend", "Mobile", "Database", "Tools", "Data Analyst & BI"].map(
               (category) => {
                 const categorySkills = skills.filter(
                   (s) => s.category === category
