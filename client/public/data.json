@@ -203,6 +203,26 @@
       "imageUrl": "/assets/img/projects/rttr.png"
     },
     {
+  "id": 40,
+  "title": "Git Report AI",
+  "category": "fullstack",
+  "descriptionEn": "AI-powered platform that automatically analyzes Git repositories and generates professional activity reports from commit history. Features Git integration, report generation with LLMs, email delivery, authentication, dashboard analytics and subscription management. Built with a modern full-stack architecture focused on automation and productivity.",
+  "descriptionFr": "Plateforme SaaS propulsée par l'IA permettant d'analyser automatiquement les dépôts Git et de générer des rapports d'activité professionnels à partir de l'historique des commits. Intègre l'analyse des dépôts, la génération de rapports avec des LLM, l'envoi d'e-mails, l'authentification, un tableau de bord de suivi et la gestion des abonnements. Développée avec une architecture Full Stack moderne orientée automatisation et gain de productivité.",
+  "techStack": [
+    "React",
+    "TypeScript",
+    "TailwindCSS",
+    "FastAPI",
+    "Python",
+    "Supabase",
+    "PostgreSQL",
+    "Gemini API",
+    "GitHub API"
+  ],
+  "link": "#",
+  "imageUrl": "/assets/img/projects/git-report-ai.png"
+}
+    {
       "id": 1,
       "title": "Intervox",
       "category": "fullstack",
